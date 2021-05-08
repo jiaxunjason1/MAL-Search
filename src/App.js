@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/layout/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
+import Connect from './components/pages/Connect';
+import Token from './components/pages/Token';
+import PrivateRoute from './components/routing/PrivateRoute';
+import Alert from './components/layout/Alert';
+import Details from './components/pages/Details';
 
-function App() {
+import SearchState from './contexts/Search/SearchState';
+import AccessState from './contexts/access/AccessState';
+import AlertState from './contexts/alert/AlertState';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AccessState>
+    <SearchState>
+    <AlertState>
+    <Router>
+      <div className='App'>
+        <Navbar />
+        <div className='container'>
+          <Alert />
+          <Switch>
+            <PrivateRoute exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/token' component={Token} />
+            <Route exact path='/connect' component={Connect} />
+            <Route exact path='/anime/:id' component={Details} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </div>
+    </Router>
+    </AlertState>
+    </SearchState>
+    </AccessState>
   );
 }
 

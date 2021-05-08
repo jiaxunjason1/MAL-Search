@@ -1,0 +1,13 @@
+export const SEARCH_ANIME = 'SEARCH_ANIME';
+export const CLEAR_ANIME = 'CLEAR_ANIME';
+export const SET_LOADING = 'SET_LOADING';
+export const GEN_VERIFIER = 'GEN_VERIFIER';
+export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
+export const GET_ACCESS_TOKEN = 'GET_ACCESS_TOKEN';
+export const SET_VERIFIER = 'SET_VERIFIER';
+export const SET_ACCESS = 'SET_ACCESS';
+export const LOGOUT = 'LOGOUT';
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const SEARCH_ERROR = 'SEARCH_ERROR';
+export const GET_ANIME = 'GET_ANIME';
